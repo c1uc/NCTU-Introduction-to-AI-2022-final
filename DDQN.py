@@ -94,6 +94,8 @@ class Agent():
             self.target_net.load_state_dict(self.evaluate_net.state_dict())
 
         observations, actions, rewards, next_observations, done = self.buffer.sample(self.batch_size)
+        states = torch.tensor(numpy.array(observations), dtype=torch.float).cuda()
+        states = torch.permute(states, (0, 3, 1, 2))
 
         next_states = torch.tensor(numpy.array(next_observations), dtype=torch.float).cuda()
         next_states = torch.permute(next_states, (0, 3, 1, 2))
@@ -103,7 +105,7 @@ class Agent():
         not_done = [a[0] for a in enumerate(done) if a[1] == 0]
         not_done_states = torch.cat([next_states[a] for a in not_done]).view(-1, 4, 84, 84)
 
-        evaluate = self.evaluate_net(next_states).gather(1, acts)
+        evaluate = self.evaluate_net(states).gather(1, acts)
         target = torch.zeros(self.batch_size).cuda()
         target[not_done] = self.target_net(not_done_states).max(1)[0].detach()
 
