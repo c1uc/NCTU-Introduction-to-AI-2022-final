@@ -25,3 +25,6 @@ Training Curve:
 
 Average tile broke per life in testing:
 ![Test Curve](https://github.com/c1uc/NCTU-Introduction-to-AI-2022-final/blob/master/Graphs/compare_test.png)
+
+DDQN average Rewards when end eps=0.005:
+![Test Curve2](https://github.com/c1uc/NCTU-Introduction-to-AI-2022-final/blob/master/Graphs/DDQN_with_end_eps_0_005_test.png)
