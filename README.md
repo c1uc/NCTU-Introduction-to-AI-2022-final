@@ -1,6 +1,6 @@
 # NCTU-Introduction-to-AI-2022-final
 ## Overview  
-Playing the [Atari Breakout](https://www.gymlibrary.ml/environments/atari/breakout/)  game on openAI gym and trained it with DQN and Double-DQN.
+Training an agent based on [Atari Breakout](https://www.gymlibrary.ml/environments/atari/breakout/)  game on openAI gym it with CNN+DQN and CNN+Double-DQN.
 
 ![gameplay](https://github.com/c1uc/NCTU-Introduction-to-AI-2022-final/blob/master/Images/DQNep45000.gif)
 ## Requirements
