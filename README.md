@@ -34,14 +34,28 @@ Wrappers are copied from [openai baselines](https://github.com/openai/baselines/
 ## Net Structure
 ![Net Structure](https://github.com/c1uc/NCTU-Introduction-to-AI-2022-final/blob/master/Images/Net%20Structure.jpg)
 ## Experiment Results
+### Train
 Training Curve:
 ![Training Curve](https://github.com/c1uc/NCTU-Introduction-to-AI-2022-final/blob/master/Graphs/compare.png)
-### Train
-DQN Average Unclipped reward: 38.75
+### Test
+#### DQN
+Average Unclipped reward per episode: 38.75
 
-DDQN Average Unclipped reward: 14.75
+Max Unclipped reward per episode: 59
 
-Average clipped Rewards per life:
+Average Clipped reward in 100 lives: 
+![](https://github.com/c1uc/NCTU-Introduction-to-AI-2022-final/blob/master/Graphs/DQN_test.png)
+#### DDQN
+Average Unclipped reward per episode: 14.75
+
+Max Unclipped reward per episode: 18
+
+Average Clipped reward in 100 lives: 
+![](https://github.com/c1uc/NCTU-Introduction-to-AI-2022-final/blob/master/Graphs/DDQN_test.png)
+
+Average Clipped reward when end eps=0.005 in 100 lives:
+![](https://github.com/c1uc/NCTU-Introduction-to-AI-2022-final/blob/master/Graphs/DDQN_with_end_eps_0_005_test.png)
+#### Compare
+Average Clipped reward in 100 lives:
 ![Test Curve](https://github.com/c1uc/NCTU-Introduction-to-AI-2022-final/blob/master/Graphs/compare_test.png)
-DDQN average clipped Rewards when end eps=0.005:
-![Test Curve2](https://github.com/c1uc/NCTU-Introduction-to-AI-2022-final/blob/master/Graphs/DDQN_with_end_eps_0_005_test.png)
+
