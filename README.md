@@ -36,7 +36,12 @@ Wrappers are copied from [openai baselines](https://github.com/openai/baselines/
 ## Experiment Results
 Training Curve:
 ![Training Curve](https://github.com/c1uc/NCTU-Introduction-to-AI-2022-final/blob/master/Graphs/compare.png)
-Average tile broke per life when testing:
+### Train
+DQN Average Unclipped reward: 38.75
+
+DDQN Average Unclipped reward: 14.75
+
+Average clipped Rewards per life:
 ![Test Curve](https://github.com/c1uc/NCTU-Introduction-to-AI-2022-final/blob/master/Graphs/compare_test.png)
-DDQN average testing Rewards when end eps=0.005:
+DDQN average clipped Rewards when end eps=0.005:
 ![Test Curve2](https://github.com/c1uc/NCTU-Introduction-to-AI-2022-final/blob/master/Graphs/DDQN_with_end_eps_0_005_test.png)
