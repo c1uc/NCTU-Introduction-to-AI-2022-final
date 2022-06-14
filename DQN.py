@@ -15,8 +15,8 @@ total_rewards = []
 
 class ReplayBuffer:
     def __init__(self, capacity):
-        self.capacity = capacity  # the size of the replay buffer
-        self.memory = deque(maxlen=capacity)  # replay buffer itself
+        self.capacity = capacity
+        self.memory = deque(maxlen=capacity)
 
     def insert(self, state, action, reward, next_state, done):
         self.memory.append([state, action, reward, next_state, done])
