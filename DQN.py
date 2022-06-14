@@ -7,6 +7,7 @@ import random
 import os
 import argparse
 from tqdm import tqdm
+from collections import deque
 from atari_wrappers import wrap_deepmind, make_atari
 
 total_rewards = []
@@ -14,23 +15,16 @@ total_rewards = []
 
 class ReplayBuffer:
     def __init__(self, capacity):
-        self.capacity = capacity
-        self.memory = []
-        self.pos = 0
+        self.capacity = capacity  # the size of the replay buffer
+        self.memory = deque(maxlen=capacity)  # replay buffer itself
 
     def insert(self, state, action, reward, next_state, done):
-        if len(self.memory) < self.capacity:
-            self.memory.append(None)
-        self.memory[self.pos] = [state, action, reward, next_state, done]
-        self.pos = (self.pos + 1) % self.capacity
+        self.memory.append([state, action, reward, next_state, done])
 
     def sample(self, batch_size):
         batch = random.sample(self.memory, batch_size)
         observations, actions, rewards, next_observations, done = zip(*batch)
         return observations, actions, rewards, next_observations, done
-
-    def __len__(self):
-        return len(self.memory)
 
 
 class Net(nn.Module):
